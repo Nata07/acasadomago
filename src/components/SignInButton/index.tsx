@@ -22,8 +22,8 @@ export function SignInButton() {
       type="button" 
       onClick={() => signIn('google')}
     >
-      <FaGoogle />
-      Entrar com Google
+      <FaGoogle fill="#e74133" />
+      Entrar
     </button>
   )
 }

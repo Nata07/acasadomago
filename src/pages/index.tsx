@@ -6,6 +6,7 @@ import Background from '../../public/images/background.png'
 import { SubscribeButton } from "../components/SubscribeButton";
 import { GetServerSideProps, GetStaticProps } from "next";
 import { stripe } from "../services/stripe";
+import { useSession } from "next-auth/client";
 
 interface HomeProps {
   product: {
@@ -21,8 +22,8 @@ export default function Home({product}: HomeProps) {
       </Head>
       <main className={styled.container}>
         <section className={styled.hero}>
-          <span>👏 Hey, bem vindo </span>
-          <h1>A Casa do Mago</h1>
+          <span>👏 Hey, seja bem vindo </span>
+          <h1>A casa do Mago</h1>
           <p>Em sintonia com o Universo</p>
           <p>Receba as nossas novidades <br />
             <span>por apenas {product.amount}</span>  por mês!
