@@ -1,25 +1,29 @@
 import { useState } from 'react';
 import { FaGoogle } from 'react-icons/fa'
 import { FiX } from 'react-icons/fi'
+import { signIn, useSession, signOut} from 'next-auth/client'
+
 import styled from './styles.module.scss';
 
 export function SignInButton() {
-  const [isUserLogged, setIsUserLogged] = useState(true);
+  const [session] = useSession();
 
-  function handleSignIn(){
-    setIsUserLogged(true)
-  }
+  console.log(session)
 
-  return isUserLogged ? (
-    <button className={styled.buttonContainer} type="button" onClick={() => setIsUserLogged(!isUserLogged)}>
+  return session ? (
+    <button className={styled.buttonContainer} type="button" >
       <FaGoogle color="#04d361" />
-        Natanael
-      <FiX color="#737380" className={styled.closeIcon}/>
+        {session.user.name}
+      <FiX color="#737380" className={styled.closeIcon} onClick={() => {signOut()}}/>
     </button>
   ) : (
-    <button className={styled.buttonContainer} type="button">
+    <button 
+      className={styled.buttonContainer} 
+      type="button" 
+      onClick={() => signIn('google')}
+    >
       <FaGoogle />
-        Sign in with Google
+      Entrar com Google
     </button>
   )
 }
