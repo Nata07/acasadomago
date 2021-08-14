@@ -7,10 +7,21 @@
 :root {
   --white: #ffffff;
 
-  --purple-900: #542d6e;
+  --purple-900: #2a0054;
+  --purple-800: #542d6e;
   --purple-500: #684481;
   --purple-300: #9069a8;
   --purple-100: #985895;
+
+  --background-100: #1e1146;
+  --background-200: #19114c;
+  --background-300: #2a0c62;
+  --background-400: #540789;
+  --background-500: #3b0968;
+  --background-600: #11012e;
+  --background-700: #10083d;
+  --background-800: #020151;
+  --background-900: #0b0287;
 }
 
 @media (max-width: 1080px) {
@@ -26,8 +37,9 @@
 }
 
 body {
-  background-color: var(--white);
-  color: var(--purple-900);
+  // background-color: #0e0c3d;
+  background-color: #121450;
+  color: var(--white);
 }
 
 body,
@@ -35,7 +47,7 @@ input,
 textarea,
 select,
 button {
-  font: 400 1rem "Dosis", sans-serif;
+  font: 400 1rem "STIX Two Text", sans-serif;
 }
 
 button {
